@@ -8,12 +8,13 @@ import Review from '../Review/Review';
 import Submit from '../Submit/Submit';
 import Supported from '../Supported/Supported';
 import Understanding from '../Understanding/Understanding';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 
 class App extends Component {
   render() {
     return (
+      <Router>
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
@@ -21,7 +22,17 @@ class App extends Component {
         </header>
         <br/>
       </div>
-
+      <div>
+        
+      <Route path="/" component={Home}/>
+      <Route path="/feeling" component={Feeling}/>
+      <Route path="/understanding" component={Understanding}/>
+      <Route path="/supported" component={Supported}/>
+      <Route path="/comments" component={Comments}/>
+      <Route path="/review" component={Review}/>
+      <Route path="/submit" component={Submit}/>
+      </div>
+      </Router>
     );
   }
 }
