@@ -23,8 +23,10 @@ class App extends Component {
         <br/>
       </div>
       <div>
-        
-      <Route path="/" component={Home}/>
+
+      {/* Use exact path for home page, so it won't show up on other 
+      componet pages. */}
+      <Route exact path="/" component={Home}/>
       <Route path="/feeling" component={Feeling}/>
       <Route path="/understanding" component={Understanding}/>
       <Route path="/supported" component={Supported}/>
