@@ -33,7 +33,7 @@ class Understanding extends Component {
     //make handleChange function
     handleChange = (event) => {
         this.setState({
-            feeling: event.target.value
+            understanding: event.target.value
         })
     }
     render() {

@@ -33,7 +33,7 @@ class Supported extends Component {
     //make handleChange function
     handleChange = (event) => {
         this.setState({
-            feeling: event.target.value
+            supported: event.target.value
         })
     }
     render() {
