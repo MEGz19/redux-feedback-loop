@@ -15,14 +15,14 @@ class Understanding extends Component {
     //once input complete, dispatch info
     //then proceed to next page
     handleClick = () => {
-        if (this.state.feeling === '') {
+        if (this.state.understanding === '') {
             alert('Please submit your feedback in order to proceed.')
         }
         // send info to state (.dispatch)
         else {
             this.props.dispatch({
                 type: 'SET_UNDERSTANDING',
-                payload: this.state.feeling
+                payload: this.state.understanding
             })
             //go to next page
             this.props.history.push('/supported')
