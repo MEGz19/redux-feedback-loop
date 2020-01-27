@@ -8,48 +8,34 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-
-const feelingReducer = (state = [], action) => {
-    switch (action.type) {
-        case 'SET_FEELING':
-            console.log('state', state)
-            return action.payload;
-     
-        default:
-            return state
+//SET UP REDUCERS
+const feedbackReducer = (state = {}, action) => {
+    if (action.type === 'SET_FEELING') {
+        return {
+            ...state,
+            feeling: action.payload
+        }
+    } else if (action.type === 'SET_UNDERSTANDING') {
+        return {
+            ...state,
+            understanding: action.payload
+        }
+    } else if (action.type === 'SET_SUPPORTED') {
+        return {
+            ...state,
+            supported: action.payload
+        }
+    } else if (action.type === 'SET_COMMENTS') {
+        return {
+            ...state,
+            comments: action.payload
+        }
     }
+    return state
 }
 
-// const secondReducer = (state = [], action) => {
-//     switch (action.type) {
-//         case 'SET_ORDERS':
-//             console.log('state', state)
-//             return action.payload;
 
-//         default:
-//             return state
-//     }
-// }
 
-// const secondReducer = (state = true, action) => {
-//     if (action.type === 'BUTTON_TWO') {
-//         console.log('state', state)
-//         console.log('Im the second reducer!', action)
-//         return !state
-//     }
-//     return state;
-// }
-
-// const elementListReducer = (state = [], action) => {
-//     if (action.type === 'ADD_ELEMENT') {
-//         console.log('state', state)
-//         console.log(action.payload)
-//         return [...state, action.payload]
-//     }
-//     //whatever a reducer returns, 
-//     // becomes state the next time it runs!
-//     return state;
-// }
 
 
 
@@ -60,7 +46,7 @@ const feelingReducer = (state = [], action) => {
 let store = createStore(
     // this is a reducer!
     combineReducers({
-        feelingReducer
+        feedbackReducer,
     }),
     applyMiddleware(logger)
 
