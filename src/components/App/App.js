@@ -12,6 +12,7 @@ import Review from '../Review/Review';
 import Submit from '../Submit/Submit';
 import Supported from '../Supported/Supported';
 import Understanding from '../Understanding/Understanding';
+//import NextButton from '../NextButton/NextButton';
 
 //import router
 import { HashRouter as Router, Route } from 'react-router-dom';
