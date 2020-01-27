@@ -8,10 +8,19 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+//WHERE DO WE SET STATE??????????
+// state = {
+//     feeling: '',
+//     understanding: '',
+//     supported: '',
+//     comments: '',
+//     review: ''
+// }
+
 
 const firstReducer = (state = [], action) => {
     switch (action.type) {
-        case 'SET_PIZZAS':
+        case 'SET_FEELING':
             console.log('state', state)
             return action.payload;
      

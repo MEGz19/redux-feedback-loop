@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 //import NextButton from '../NextButton/NextButton';
-    //QUESTION: How do you get the NextButton component to work in other components?
+//QUESTION: How do you get the NextButton component to work in other components?
 
 
 //import axios from 'axios';
@@ -30,12 +30,12 @@ class Feeling extends Component {
 
     //make handleChange function
 
-    
+
     render() {
         return (
             <div>
                 <h1>How are you feeling today?</h1>
-                
+
                 <p>Rate how you're feeling on a scale from 1 to 5, with 5 being "awesome" and 1 being "stressed."</p>
 
                 <input type="number" min="1"
@@ -45,7 +45,7 @@ class Feeling extends Component {
 
 
 
-                
+
             </div>
         );
     }
