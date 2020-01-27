@@ -8,17 +8,8 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-//WHERE DO WE SET STATE??????????
-// state = {
-//     feeling: '',
-//     understanding: '',
-//     supported: '',
-//     comments: '',
-//     review: ''
-// }
 
-
-const firstReducer = (state = [], action) => {
+const feelingReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_FEELING':
             console.log('state', state)
@@ -69,7 +60,7 @@ const firstReducer = (state = [], action) => {
 let store = createStore(
     // this is a reducer!
     combineReducers({
-        firstReducer
+        feelingReducer
     }),
     applyMiddleware(logger)
 

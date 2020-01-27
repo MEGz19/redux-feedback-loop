@@ -8,6 +8,10 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 //import axios from 'axios';
 
 class Feeling extends Component {
+    //set state - for each component
+    state = {
+        feeling: '',
+    }
     //make handleClick function that sends state to ReduxState
     //if/else alert - form input cannot be empty
     //once input complete, dispatch info
@@ -29,7 +33,11 @@ class Feeling extends Component {
     }
 
     //make handleChange function
-
+    handleChange = (event) => {
+        this.setState({
+            feeling: event.target.value
+        })
+    }
 
     render() {
         return (
@@ -38,13 +46,11 @@ class Feeling extends Component {
 
                 <p>Rate how you're feeling on a scale from 1 to 5, with 5 being "awesome" and 1 being "stressed."</p>
 
-                <input type="number" min="1"
-                />
+                <input type="number" min="1" onChange={
+                    (event) => this.handleChange(event)}>
+                </input>
 
                 <button onClick={this.handleClick}>NEXT</button>
-
-
-
 
             </div>
         );
